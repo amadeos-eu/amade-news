@@ -1,8 +1,9 @@
 package eu.amadeos.apps.news.net;
 
+import eu.amadeos.commons.net.Network;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.ProxySelector;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -14,9 +15,8 @@ import java.util.Map;
 import java.util.zip.GZIPInputStream;
 
 /**
- * The JDK's HTTP client with the JVM's proxy selector, so News follows the amadeOS proxy setting once amade-commons
- * installs it for every program; this is the one place to switch to the shared client of amade-commons then.
- * Bodies are limited to {@value #MAX_BYTES} bytes.
+ * The JDK's HTTP client from amade-commons, so News follows the proxy of Settings &gt; Network, its password
+ * included, and a change of it while the program runs. Bodies are limited to {@value #MAX_BYTES} bytes.
  */
 public final class JdkHttp implements Http {
     static final int MAX_BYTES = 20 * 1024 * 1024;
@@ -24,14 +24,12 @@ public final class JdkHttp implements Http {
     private final HttpClient client;
     private final String userAgent;
 
+    // --8<-- [start:client]
     public JdkHttp(String userAgent) {
         this.userAgent = userAgent;
-        this.client = HttpClient.newBuilder()
-                .connectTimeout(Duration.ofSeconds(10))
-                .followRedirects(HttpClient.Redirect.NORMAL)
-                .proxy(ProxySelector.getDefault())
-                .build();
+        this.client = Network.httpClient().build();
     }
+    // --8<-- [end:client]
 
     @Override
     public Response get(URI uri, Map<String, String> headers) throws IOException, InterruptedException {

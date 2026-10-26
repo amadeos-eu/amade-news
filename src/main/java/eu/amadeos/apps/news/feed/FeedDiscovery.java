@@ -25,6 +25,7 @@ public final class FeedDiscovery {
     private FeedDiscovery() {
     }
 
+    // --8<-- [start:find]
     /** The feeds in the page, in page order, without duplicates; relative addresses resolved against the page. */
     public static List<Found> find(String html, String pageUrl) {
         Map<String, Found> found = new LinkedHashMap<>();
@@ -42,6 +43,7 @@ public final class FeedDiscovery {
         }
         return new ArrayList<>(found.values());
     }
+    // --8<-- [end:find]
 
     private static Map<String, String> attributes(String text) {
         Map<String, String> map = new LinkedHashMap<>();

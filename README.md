@@ -18,7 +18,7 @@
 - **Folders**: feeds can be renamed and moved; folders renamed from the context menu.
 - **OPML** import and export of the subscriptions, to move from or to another feed reader; an `.opml` file on the command line is imported.
 - **Preferences**: update interval, update at start, keeping time (7 days to a year), text size and pictures.
-- **Network**: the connections go through the amadeOS network settings, a proxy included (`ProxySelector.getDefault()`; see the planned central proxy setting).
+- **Network**: the connections follow the proxy of *Settings → Network*, with its password, through `Network.httpClient()` of amade-commons.
 - Reads RSS 0.9x/2.0, RSS 1.0 (RDF) and Atom 1.0, with Media RSS, `content:encoded`, Dublin Core and iTunes fields, and repairs common faults (bare `&`, HTML entities, wrong characters, a charset that does not match).
 - Five languages (English, Deutsch, Français, Español, Italiano), following the amadeOS desktop language; *Options → Language* overrides it. Articles are shown in the language they were written in.
 - Theme colours and Motif look from [amade-commons](https://github.com/datazuul/amade-commons).
@@ -83,7 +83,6 @@ Platforms: Linux (deb) for now.
 - *Read full article*: the article's page cleaned up into the reading pane
 - Podcasts: episodes handed to amade-audio
 - An updated catalog from amadeos.eu without a new release, and a check of its addresses
-- The central proxy setting of amadeOS, once it is there
 
 ## License
 

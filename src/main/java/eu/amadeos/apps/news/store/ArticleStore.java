@@ -109,6 +109,7 @@ public final class ArticleStore {
 
     // ---------------------------------------------------------------- changes from the feed
 
+    // --8<-- [start:merge]
     /**
      * Takes in what the feed has now. New entries are added unread; known ones get the new text but keep read,
      * starred and Read Later. Articles older than {@code keepDays} that are not starred, not on Read Later and no
@@ -136,6 +137,7 @@ public final class ArticleStore {
         save(feedId);
         return added;
     }
+    // --8<-- [end:merge]
 
     /**
      * Only the state changes: 304 Not Modified, or an error. Nothing is pruned, because News does not know which

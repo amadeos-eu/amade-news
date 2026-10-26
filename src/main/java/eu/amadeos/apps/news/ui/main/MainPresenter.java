@@ -364,6 +364,7 @@ public class MainPresenter {
         update(feeds);
     }
 
+    // --8<-- [start:parallel]
     private void update(List<Feed> feeds) {
         if (updating || feeds.isEmpty()) return;
         updating = true;
@@ -405,6 +406,7 @@ public class MainPresenter {
             });
         }
     }
+    // --8<-- [end:parallel]
 
     private void finished(Feed feed, FeedUpdater.Result r) {
         rememberError(feed.id(), s.store().state(feed.id()));

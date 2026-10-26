@@ -48,6 +48,8 @@ import javax.swing.ListCellRenderer;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
+import javax.swing.plaf.basic.BasicHTML;
+import javax.swing.text.View;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -409,30 +411,42 @@ public final class MainWindow extends JFrame implements MainView {
         };
     }
 
+    private static final int ROW_PADDING = 5;
+
     private ListCellRenderer<ArticleRow> articleRenderer() {
         int tw = Math.round(THUMB_WIDTH * AmadeUI.fontScale());
         int th = Math.round(THUMB_HEIGHT * AmadeUI.fontScale());
         return (list, row, index, selected, focus) -> {
             Article a = row.article();
             String colour = selected ? "" : String.format(" color='#%06x'", AmadeUI.theme().textInactive().getRGB() & 0xFFFFFF);
-            int width = Math.max(120, list.getWidth() - (settings.showPictures() ? tw : 0) - Math.round(30 * AmadeUI.fontScale()));
             String mark = (a.read() ? "" : "● ") + (a.starred() ? "★ " : "") + (a.later() ? "◷ " : "");
             String title = html(a.title().isEmpty() ? msg.get("article.untitled") : a.title());
             String meta = html(row.feedTitle() + "  ·  " + row.when());
-            JLabel l = new JLabel("<html><div style='width:" + width + "px'>" + (a.read() ? mark + title : "<b>" + mark + title + "</b>")
-                    + "<br><font" + colour + ">" + meta + "</font></div></html>");
+            JLabel l = new JLabel("<html>" + (a.read() ? mark + title : "<b>" + mark + title + "</b>")
+                    + "<br><font" + colour + ">" + meta + "</font></html>");
             l.setName("article." + index);
             l.setOpaque(true);
             l.setVerticalAlignment(JLabel.TOP);
             l.setIconTextGap(8);
+            int textWidth = list.getWidth() - 2 * ROW_PADDING;
             if (settings.showPictures()) {
                 Optional<BufferedImage> thumb = a.imageUrl().isEmpty() ? Optional.empty()
                         : images.get(a.imageUrl(), tw, th, true, list::repaint);
                 l.setIcon(thumb.<Icon>map(ImageIcon::new).orElseGet(() -> new Blank(tw, th, !a.imageUrl().isEmpty())));
+                textWidth -= tw + l.getIconTextGap();
             }
+            // --8<-- [start:row-height]
+            // The text wraps at the width the list really has, so it never runs under the scroll bar. Measured a
+            // little narrower than it is painted, so a line that only just fits never needs more height than given.
+            View view = (View) l.getClientProperty(BasicHTML.propertyKey);
+            view.setSize(Math.max(80, textWidth - 6), 0);
+            int textHeight = (int) Math.ceil(view.getPreferredSpan(View.Y_AXIS)) + 6;
+            int height = Math.max(textHeight, settings.showPictures() ? th : 0) + 2 * ROW_PADDING + 1;
+            l.setPreferredSize(new Dimension(Math.max(1, list.getWidth()), height));
+            // --8<-- [end:row-height]
             l.setBorder(BorderFactory.createCompoundBorder(
                     BorderFactory.createMatteBorder(0, 0, 1, 0, AmadeUI.theme().shadow()),
-                    BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+                    BorderFactory.createEmptyBorder(ROW_PADDING, ROW_PADDING, ROW_PADDING, ROW_PADDING)));
             l.setBackground(selected ? list.getSelectionBackground() : list.getBackground());
             l.setForeground(selected ? list.getSelectionForeground() : list.getForeground());
             return l;

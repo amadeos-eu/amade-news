@@ -51,11 +51,13 @@ public record Article(String id, String feedId, String title, String text, Strin
         return new Article(id, feedId, title, text, link, published, author, imageUrl, audioUrl, read, starred, value);
     }
 
+    // --8<-- [start:updated-from]
     /** The same article with new content from the feed, keeping what the user did with it. */
     public Article updatedFrom(Article fresh) {
         return new Article(id, feedId, fresh.title, fresh.text, fresh.link, published, fresh.author, fresh.imageUrl,
                 fresh.audioUrl, read, starred, later);
     }
+    // --8<-- [end:updated-from]
 
     /** Kept regardless of age. */
     public boolean kept() {

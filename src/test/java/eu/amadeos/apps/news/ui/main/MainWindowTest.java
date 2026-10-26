@@ -111,6 +111,30 @@ class MainWindowTest {
     }
 
     @Test
+    void longTitlesWrapInsideTheListAndMakeTheirRowTaller() throws Exception {
+        Scene scene = new Scene(dir);
+        scene.http.serve(Scene.WORLD, Scene.rss("World News", "https://world.example.org/",
+                Scene.item("long", "Angriffe gegen Neonazis - Komplex: Angeklagter vor Beginn des Prozesses gestorben, "
+                        + "Gericht stellt das Verfahren ein", "Mon, 26 Oct 2026 07:30:00 GMT", "Text."),
+                Scene.item("short", "Wetter", "Mon, 26 Oct 2026 07:00:00 GMT", "Text.")), "application/rss+xml");
+        scene.subscriptions.load();
+        scene.subscriptions.add(List.of(eu.amadeos.apps.news.domain.Feed.of("World News", Scene.WORLD, "")));
+        open(scene, EN);
+        onEdt(() -> {
+            var list = window.articleList();
+            int width = list.getWidth();
+            assertTrue(width > 100);
+            var renderer = list.getCellRenderer();
+            java.awt.Dimension tall = renderer.getListCellRendererComponent(list, list.getModel().getElementAt(0), 0,
+                    false, false).getPreferredSize();
+            java.awt.Dimension low = renderer.getListCellRendererComponent(list, list.getModel().getElementAt(1), 1,
+                    false, false).getPreferredSize();
+            assertTrue(tall.width <= width, tall.width + " > " + width);
+            assertTrue(tall.height > low.height, "the long title wraps");
+        });
+    }
+
+    @Test
     void theWindowSpeaksGerman() throws Exception {
         open(new Scene(dir).withFeeds(), DE);
         onEdt(() -> {

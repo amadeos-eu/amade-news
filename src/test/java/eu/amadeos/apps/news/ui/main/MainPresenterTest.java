@@ -97,6 +97,7 @@ class MainPresenterTest {
     }
 
     @Test
+    // --8<-- [start:presenter-test]
     void starAndReadLaterHaveTheirOwnLists() throws Exception {
         Scene scene = new Scene(dir).withFeeds();
         MainPresenter presenter = start(scene);
@@ -115,6 +116,7 @@ class MainPresenterTest {
         assertEquals(List.of(), view.titles());
         assertTrue(view.placeholder.contains("no articles here"));
     }
+    // --8<-- [end:presenter-test]
 
     @Test
     void searchFindsArticlesWithEveryWord() throws Exception {

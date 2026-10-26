@@ -110,7 +110,13 @@ public final class Screenshots {
                 item(http, "w2", "River levels fall after a week of rain", "Mon, 26 Oct 2026 06:15:00 GMT",
                         "Towns along the river can open their quays again.", new Color(90, 130, 160), new Color(200, 210, 200)),
                 item(http, "w3", "Harbour reopens after repairs", "Sun, 25 Oct 2026 19:30:00 GMT",
-                        "The ferries run on the usual timetable from Tuesday.", null, null)), "application/rss+xml");
+                        "The ferries run on the usual timetable from Tuesday.", null, null),
+                item(http, "w4", "Parliament debates the budget - opposition calls the spending plans for the coming two years unrealistic",
+                        "Sun, 25 Oct 2026 15:00:00 GMT", "The vote is planned for December.", new Color(110, 90, 80), new Color(180, 170, 150)),
+                item(http, "w5", "Regional elections: turnout higher than four years ago", "Sun, 25 Oct 2026 12:00:00 GMT",
+                        "First results are expected at 18:00.", null, null),
+                item(http, "w6", "Museums open their doors for a long night of culture", "Sat, 24 Oct 2026 20:00:00 GMT",
+                        "More than eighty houses take part.", new Color(60, 40, 90), new Color(200, 170, 90))), "application/rss+xml");
         http.serve(SCIENCE, Scene.rss("Science Today", "https://science.example.org/",
                 item(http, "s1", "Bees can count to four", "Mon, 26 Oct 2026 05:00:00 GMT",
                         "A study of honey bees shows they tell small numbers apart.", new Color(240, 200, 60), new Color(120, 90, 30)),
