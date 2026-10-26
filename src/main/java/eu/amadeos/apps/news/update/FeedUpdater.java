@@ -56,6 +56,7 @@ public final class FeedUpdater {
         this.clock = clock;
     }
 
+    // --8<-- [start:update]
     public Result update(Feed feed, int keepDays) throws InterruptedException {
         Instant now = clock.instant();
         FeedState state = store.state(feed.id());
@@ -93,6 +94,7 @@ public final class FeedUpdater {
         int added = store.merge(feed.id(), fresh, newState, now, keepDays);
         return new Result(feed.id(), added, "", Optional.of(parsed));
     }
+    // --8<-- [end:update]
 
     private Result fail(Feed feed, FeedState state, Instant now, String why, Instant wait) {
         store.touch(feed.id(), state.failed(now, why, wait));
@@ -111,6 +113,7 @@ public final class FeedUpdater {
         return list;
     }
 
+    // --8<-- [start:retry-after]
     /** Retry-After in seconds or as an HTTP date; one hour if missing or unreadable, at most a day. */
     static Duration retryAfter(String value, Instant now) {
         String v = value.strip();
@@ -127,6 +130,7 @@ public final class FeedUpdater {
         if (wait.isNegative() || wait.isZero()) return Duration.ofMinutes(1);
         return wait.compareTo(Duration.ofDays(1)) > 0 ? Duration.ofDays(1) : wait;
     }
+    // --8<-- [end:retry-after]
 
     /** The error code of a failed connection; the exception's message for anything else. */
     static String message(Exception e) {

@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /** Serves canned answers by address and records the requests. */
+// --8<-- [start:fake]
 public final class FakeHttp implements Http {
     private final Map<String, Response> answers = new ConcurrentHashMap<>();
     public final List<String> requests = java.util.Collections.synchronizedList(new ArrayList<>());
@@ -40,3 +41,4 @@ public final class FakeHttp implements Http {
         return r;
     }
 }
+// --8<-- [end:fake]

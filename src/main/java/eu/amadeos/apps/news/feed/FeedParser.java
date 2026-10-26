@@ -43,6 +43,7 @@ public final class FeedParser {
     private FeedParser() {
     }
 
+    // --8<-- [start:parse]
     /**
      * Reads the document.
      *
@@ -69,6 +70,7 @@ public final class FeedParser {
         }
         return interpret(root, base);
     }
+    // --8<-- [end:parse]
 
     // ---------------------------------------------------------------- repair
 
@@ -87,6 +89,7 @@ public final class FeedParser {
         return text.startsWith("\ufeff") ? text.substring(1) : text;
     }
 
+    // --8<-- [start:repair]
     /** Escapes raw ampersands, turns HTML entities into numbers and drops characters XML forbids. */
     static String repair(String text) {
         String s = XML_DECLARATION.matcher(text.strip()).replaceFirst("");
@@ -110,7 +113,9 @@ public final class FeedParser {
         named.appendTail(out);
         return out.toString();
     }
+    // --8<-- [end:repair]
 
+    // --8<-- [start:factory]
     private static XMLInputFactory factory() {
         XMLInputFactory factory = XMLInputFactory.newInstance();
         factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
@@ -119,6 +124,7 @@ public final class FeedParser {
         factory.setProperty(XMLInputFactory.IS_COALESCING, true);
         return factory;
     }
+    // --8<-- [end:factory]
 
     // ---------------------------------------------------------------- a small tree
 

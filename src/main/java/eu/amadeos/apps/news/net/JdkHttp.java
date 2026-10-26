@@ -24,10 +24,12 @@ public final class JdkHttp implements Http {
     private final HttpClient client;
     private final String userAgent;
 
+    // --8<-- [start:client]
     public JdkHttp(String userAgent) {
         this.userAgent = userAgent;
         this.client = Network.httpClient().build();
     }
+    // --8<-- [end:client]
 
     @Override
     public Response get(URI uri, Map<String, String> headers) throws IOException, InterruptedException {

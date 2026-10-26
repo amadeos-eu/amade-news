@@ -435,6 +435,7 @@ public final class MainWindow extends JFrame implements MainView {
                 l.setIcon(thumb.<Icon>map(ImageIcon::new).orElseGet(() -> new Blank(tw, th, !a.imageUrl().isEmpty())));
                 textWidth -= tw + l.getIconTextGap();
             }
+            // --8<-- [start:row-height]
             // The text wraps at the width the list really has, so it never runs under the scroll bar. Measured a
             // little narrower than it is painted, so a line that only just fits never needs more height than given.
             View view = (View) l.getClientProperty(BasicHTML.propertyKey);
@@ -442,6 +443,7 @@ public final class MainWindow extends JFrame implements MainView {
             int textHeight = (int) Math.ceil(view.getPreferredSpan(View.Y_AXIS)) + 6;
             int height = Math.max(textHeight, settings.showPictures() ? th : 0) + 2 * ROW_PADDING + 1;
             l.setPreferredSize(new Dimension(Math.max(1, list.getWidth()), height));
+            // --8<-- [end:row-height]
             l.setBorder(BorderFactory.createCompoundBorder(
                     BorderFactory.createMatteBorder(0, 0, 1, 0, AmadeUI.theme().shadow()),
                     BorderFactory.createEmptyBorder(ROW_PADDING, ROW_PADDING, ROW_PADDING, ROW_PADDING)));
