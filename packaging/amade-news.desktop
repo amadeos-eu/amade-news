@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=amadeOS News
+Name[de]=amadeOS Nachrichten
+Name[fr]=amadeOS Actualités
+Name[es]=amadeOS Noticias
+Name[it]=amadeOS Notizie
+GenericName=Feed Reader
+GenericName[de]=Feedreader
+GenericName[fr]=Lecteur de flux
+GenericName[es]=Lector de fuentes
+GenericName[it]=Lettore di feed
+Comment=News, blogs and podcasts from RSS and Atom feeds, with Europe's public broadcasters by country
+Comment[de]=Nachrichten, Blogs und Podcasts aus RSS- und Atom-Feeds, mit Europas öffentlich-rechtlichen Sendern nach Ländern
+Comment[fr]=Actualités, blogs et podcasts des flux RSS et Atom, avec les radiodiffuseurs publics d'Europe par pays
+Comment[es]=Noticias, blogs y pódcasts de fuentes RSS y Atom, con las radiotelevisiones públicas de Europa por país
+Comment[it]=Notizie, blog e podcast da feed RSS e Atom, con le emittenti pubbliche d'Europa per paese
+Icon=amade-news
+Exec=/usr/bin/amade-news %U
+Terminal=false
+Categories=Network;News;Feed;
+MimeType=application/rss+xml;application/atom+xml;text/x-opml;x-scheme-handler/feed;
+Keywords=news;feeds;rss;atom;podcast;blog;opml;europe;
+StartupNotify=true

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="it">
+  <title type="text">Notizie di prova</title>
+  <link rel="alternate" type="text/html" href="https://notizie.example.it/"/>
+  <link rel="self" href="https://notizie.example.it/atom.xml"/>
+  <author><name>Redazione</name></author>
+  <id>urn:uuid:feed-1</id>
+  <updated>2026-10-26T06:48:00+01:00</updated>
+  <entry>
+    <title type="html">Venezia, le nuove barriere &amp;amp; la prima acqua alta</title>
+    <link rel="alternate" href="/2026/10/venezia"/>
+    <link rel="enclosure" type="image/jpeg" href="https://img.example.it/venezia.jpg"/>
+    <id>tag:notizie.example.it,2026:venezia</id>
+    <published>2026-10-26T06:48:00+01:00</published>
+    <updated>2026-10-26T07:00:00+01:00</updated>
+    <summary>Le barriere sono state alzate nella notte.</summary>
+  </entry>
+  <entry>
+    <title>Vendemmia 2026</title>
+    <link href="https://notizie.example.it/vendemmia"/>
+    <id>tag:notizie.example.it,2026:vendemmia</id>
+    <updated>2026-10-25T20:00:00Z</updated>
+    <author><name>Giulia Rossi</name></author>
+    <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Qualità <em>alta</em>,</p><p>quantità in calo.</p></div></content>
+  </entry>
+</feed>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AppStream metadata of amade-news, installed as /usr/share/metainfo/eu.amadeos.apps.news.metainfo.xml.
+     amadeOS Software shows it for the installed package; a repository's appstream-generator reads it too. -->
+<component type="desktop-application">
+  <id>eu.amadeos.apps.news</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>EUPL-1.2</project_license>
+
+  <name>amadeOS News</name>
+  <name xml:lang="de">amadeOS Nachrichten</name>
+  <name xml:lang="fr">amadeOS Actualités</name>
+  <name xml:lang="es">amadeOS Noticias</name>
+  <name xml:lang="it">amadeOS Notizie</name>
+
+  <summary>Follow news sites, blogs and podcasts by their feeds</summary>
+  <summary xml:lang="de">Nachrichtenseiten, Blogs und Podcasts über ihre Feeds verfolgen</summary>
+  <summary xml:lang="fr">Suivre sites d'actualités, blogs et podcasts par leurs flux</summary>
+  <summary xml:lang="es">Seguir sitios de noticias, blogs y pódcasts por sus fuentes</summary>
+  <summary xml:lang="it">Seguire siti di notizie, blog e podcast tramite i loro feed</summary>
+
+  <description>
+    <p>amade-news is the feed reader of the amadeOS desktop. It fetches the newest articles of every website that offers an RSS or Atom feed and shows them in one list, with pictures and without advertising.</p>
+    <p xml:lang="de">amade-news ist der Feedreader des amadeOS-Desktops. Er holt die neuesten Artikel jeder Webseite, die einen RSS- oder Atom-Feed anbietet, und zeigt sie in einer Liste, mit Bildern und ohne Werbung.</p>
+    <p xml:lang="fr">amade-news est le lecteur de flux du bureau amadeOS. Il récupère les articles les plus récents de chaque site web qui propose un flux RSS ou Atom et les affiche dans une seule liste, avec images et sans publicité.</p>
+    <p xml:lang="es">amade-news es el lector de fuentes del escritorio amadeOS. Recoge los artículos más recientes de cada sitio web que ofrece una fuente RSS o Atom y los muestra en una sola lista, con imágenes y sin publicidad.</p>
+    <p xml:lang="it">amade-news è il lettore di feed del desktop amadeOS. Raccoglie gli articoli più recenti di ogni sito web che offre un feed RSS o Atom e li mostra in un unico elenco, con immagini e senza pubblicità.</p>
+    <ul>
+      <li>Europe's News: public broadcasters, news agencies and newspapers of European countries, chosen by country and flag</li>
+      <li xml:lang="de">Europas Nachrichten: öffentlich-rechtliche Sender, Nachrichtenagenturen und Zeitungen europäischer Länder, nach Land und Flagge gewählt</li>
+      <li xml:lang="fr">Actualités d'Europe : radiodiffuseurs publics, agences de presse et journaux des pays européens, choisis par pays et drapeau</li>
+      <li xml:lang="es">Noticias de Europa: radiotelevisiones públicas, agencias de noticias y periódicos de países europeos, elegidos por país y bandera</li>
+      <li xml:lang="it">Notizie d'Europa: emittenti pubbliche, agenzie di stampa e giornali dei paesi europei, scelti per paese e bandiera</li>
+      <li>Add any website: its feeds are found from the address alone</li>
+      <li xml:lang="de">Jede Webseite hinzufügen: ihre Feeds werden allein über die Adresse gefunden</li>
+      <li xml:lang="fr">Ajouter n'importe quel site web : ses flux sont trouvés à partir de la seule adresse</li>
+      <li xml:lang="es">Añadir cualquier sitio web: sus fuentes se encuentran solo con la dirección</li>
+      <li xml:lang="it">Aggiungere qualsiasi sito web: i suoi feed vengono trovati dal solo indirizzo</li>
+      <li>Folders, unread counts, search, starred articles and a Read Later list</li>
+      <li xml:lang="de">Ordner, ungelesene Artikel, Suche, markierte Artikel und eine Liste Später lesen</li>
+      <li xml:lang="fr">Dossiers, compteurs de non lus, recherche, favoris et une liste Lire plus tard</li>
+      <li xml:lang="es">Carpetas, contadores de no leídos, búsqueda, destacados y una lista Leer más tarde</li>
+      <li xml:lang="it">Cartelle, conteggio dei non letti, ricerca, preferiti e un elenco Leggi più tardi</li>
+      <li>Subscriptions import and export as OPML, to move from or to another feed reader</li>
+      <li xml:lang="de">Abonnements importieren und exportieren als OPML, um von oder zu einem anderen Feedreader zu wechseln</li>
+      <li xml:lang="fr">Import et export des abonnements en OPML, pour passer d'un autre lecteur de flux ou vers lui</li>
+      <li xml:lang="es">Importación y exportación de suscripciones en OPML, para cambiar desde o hacia otro lector</li>
+      <li xml:lang="it">Importazione ed esportazione degli abbonamenti in OPML, per passare da o verso un altro lettore</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">amade-news.desktop</launchable>
+  <icon type="stock">amade-news</icon>
+  <categories>
+    <category>Network</category>
+    <category>News</category>
+    <category>Feed</category>
+  </categories>
+
+  <url type="homepage">https://github.com/datazuul/amade-news</url>
+  <url type="bugtracker">https://github.com/datazuul/amade-news/issues</url>
+  <developer id="eu.amadeos">
+    <name>amadeOS Project</name>
+  </developer>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Feeds and folders, the article list and the reading pane</caption>
+      <caption xml:lang="de">Feeds und Ordner, die Artikelliste und der Lesebereich</caption>
+      <caption xml:lang="fr">Flux et dossiers, la liste des articles et le volet de lecture</caption>
+      <caption xml:lang="es">Fuentes y carpetas, la lista de artículos y el panel de lectura</caption>
+      <caption xml:lang="it">Feed e cartelle, l'elenco degli articoli e il riquadro di lettura</caption>
+      <image>https://raw.githubusercontent.com/datazuul/amade-news/main/docs/screenshots/amade-news.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Europe's News: feeds by country</caption>
+      <caption xml:lang="de">Europas Nachrichten: Feeds nach Ländern</caption>
+      <caption xml:lang="fr">Actualités d'Europe : flux par pays</caption>
+      <caption xml:lang="es">Noticias de Europa: fuentes por país</caption>
+      <caption xml:lang="it">Notizie d'Europa: feed per paese</caption>
+      <image>https://raw.githubusercontent.com/datazuul/amade-news/main/docs/screenshots/amade-news-europe.png</image>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>amade-news</binary>
+    <mediatype>application/rss+xml</mediatype>
+    <mediatype>application/atom+xml</mediatype>
+    <mediatype>text/x-opml</mediatype>
+  </provides>
+  <content_rating type="oars-1.1"/>
+</component>

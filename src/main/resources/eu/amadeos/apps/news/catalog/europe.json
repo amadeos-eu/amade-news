@@ -1,0 +1,495 @@
+{
+  "version": 1,
+  "updated": "2026-10-26",
+  "about": "Europe's News in amadeOS News: public broadcasters, news agencies and newspapers by country. Countries without a feed are listed so that feeds can be added later.",
+  "countries": [
+    {
+      "code": "al",
+      "name": "Shqipëria",
+      "feeds": []
+    },
+    {
+      "code": "ad",
+      "name": "Andorra",
+      "feeds": []
+    },
+    {
+      "code": "at",
+      "name": "Österreich",
+      "feeds": [
+        {
+          "title": "ORF · news",
+          "url": "https://rss.orf.at/news.xml",
+          "language": "de",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "by",
+      "name": "Беларусь",
+      "feeds": [
+        {
+          "title": "Euroradio",
+          "url": "https://euroradio.fm/en/rss.xml",
+          "language": "en",
+          "kind": "international"
+        }
+      ]
+    },
+    {
+      "code": "be",
+      "name": "België / Belgique",
+      "feeds": [
+        {
+          "title": "VRT NWS",
+          "url": "https://www.vrt.be/vrtnws/nl.rss",
+          "language": "nl",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "ba",
+      "name": "Bosna i Hercegovina",
+      "feeds": []
+    },
+    {
+      "code": "bg",
+      "name": "България",
+      "feeds": [
+        {
+          "title": "Дневник",
+          "url": "https://www.dnevnik.bg/rss/",
+          "language": "bg",
+          "kind": "newspaper"
+        }
+      ]
+    },
+    {
+      "code": "hr",
+      "name": "Hrvatska",
+      "feeds": [
+        {
+          "title": "Index.hr",
+          "url": "https://www.index.hr/rss",
+          "language": "hr",
+          "kind": "newspaper"
+        }
+      ]
+    },
+    {
+      "code": "cy",
+      "name": "Κύπρος / Kıbrıs",
+      "feeds": []
+    },
+    {
+      "code": "cz",
+      "name": "Česko",
+      "feeds": [
+        {
+          "title": "Radio Prague International",
+          "url": "https://english.radio.cz/rss/news",
+          "language": "en",
+          "kind": "international"
+        }
+      ]
+    },
+    {
+      "code": "dk",
+      "name": "Danmark",
+      "feeds": [
+        {
+          "title": "DR Nyheder",
+          "url": "https://www.dr.dk/nyheder/service/feeds/alleneuheder",
+          "language": "da",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "ee",
+      "name": "Eesti",
+      "feeds": [
+        {
+          "title": "ERR News",
+          "url": "https://news.err.ee/rss",
+          "language": "en",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "fi",
+      "name": "Suomi",
+      "feeds": [
+        {
+          "title": "Yle Uutiset",
+          "url": "https://yle.fi/uutiset/rss",
+          "language": "fi",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "fr",
+      "name": "France",
+      "feeds": [
+        {
+          "title": "franceinfo",
+          "url": "https://www.francetvinfo.fr/titres.rss",
+          "language": "fr",
+          "kind": "broadcaster"
+        },
+        {
+          "title": "France 24 · Français",
+          "url": "https://www.france24.com/fr/rss",
+          "language": "fr",
+          "kind": "international"
+        },
+        {
+          "title": "France 24 · English",
+          "url": "https://www.france24.com/en/rss",
+          "language": "en",
+          "kind": "international"
+        }
+      ]
+    },
+    {
+      "code": "de",
+      "name": "Deutschland",
+      "feeds": [
+        {
+          "title": "tagesschau",
+          "url": "https://www.tagesschau.de/xml/rss2/",
+          "language": "de",
+          "kind": "broadcaster"
+        },
+        {
+          "title": "Deutschlandfunk · Nachrichten",
+          "url": "https://www.deutschlandfunk.de/nachrichten-100.rss",
+          "language": "de",
+          "kind": "broadcaster"
+        },
+        {
+          "title": "DW · Deutsch",
+          "url": "https://rss.dw.com/xml/rss-de-all",
+          "language": "de",
+          "kind": "international"
+        },
+        {
+          "title": "DW · English",
+          "url": "https://rss.dw.com/xml/rss-en-all",
+          "language": "en",
+          "kind": "international"
+        }
+      ]
+    },
+    {
+      "code": "gr",
+      "name": "Ελλάδα",
+      "feeds": [
+        {
+          "title": "Greek Reporter",
+          "url": "https://greekreporter.com/feed/",
+          "language": "en",
+          "kind": "newspaper"
+        }
+      ]
+    },
+    {
+      "code": "hu",
+      "name": "Magyarország",
+      "feeds": [
+        {
+          "title": "Telex",
+          "url": "https://telex.hu/rss",
+          "language": "hu",
+          "kind": "newspaper"
+        }
+      ]
+    },
+    {
+      "code": "is",
+      "name": "Ísland",
+      "feeds": [
+        {
+          "title": "RÚV · Fréttir",
+          "url": "https://www.ruv.is/rss/frettir",
+          "language": "is",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "ie",
+      "name": "Éire / Ireland",
+      "feeds": [
+        {
+          "title": "RTÉ News",
+          "url": "https://www.rte.ie/news/rss/news-headlines.xml",
+          "language": "en",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "it",
+      "name": "Italia",
+      "feeds": [
+        {
+          "title": "ANSA",
+          "url": "https://www.ansa.it/sito/ansait_rss.xml",
+          "language": "it",
+          "kind": "agency"
+        }
+      ]
+    },
+    {
+      "code": "xk",
+      "name": "Kosova / Kosovo",
+      "feeds": []
+    },
+    {
+      "code": "lv",
+      "name": "Latvija",
+      "feeds": [
+        {
+          "title": "LSM English",
+          "url": "https://eng.lsm.lv/rss/?lang=en",
+          "language": "en",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "li",
+      "name": "Liechtenstein",
+      "feeds": []
+    },
+    {
+      "code": "lt",
+      "name": "Lietuva",
+      "feeds": [
+        {
+          "title": "LRT English",
+          "url": "https://www.lrt.lt/en/news-in-english?rss",
+          "language": "en",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "lu",
+      "name": "Lëtzebuerg",
+      "feeds": []
+    },
+    {
+      "code": "mt",
+      "name": "Malta",
+      "feeds": []
+    },
+    {
+      "code": "md",
+      "name": "Moldova",
+      "feeds": []
+    },
+    {
+      "code": "mc",
+      "name": "Monaco",
+      "feeds": []
+    },
+    {
+      "code": "me",
+      "name": "Crna Gora",
+      "feeds": []
+    },
+    {
+      "code": "nl",
+      "name": "Nederland",
+      "feeds": [
+        {
+          "title": "NOS Nieuws",
+          "url": "https://feeds.nos.nl/nosnieuwsalgemeen",
+          "language": "nl",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "mk",
+      "name": "Северна Македонија",
+      "feeds": []
+    },
+    {
+      "code": "no",
+      "name": "Norge",
+      "feeds": [
+        {
+          "title": "NRK · Siste nytt",
+          "url": "https://www.nrk.no/nyheter/siste.rss",
+          "language": "no",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "pl",
+      "name": "Polska",
+      "feeds": [
+        {
+          "title": "Polskie Radio",
+          "url": "https://www.polskieradio.pl/rss/8.xml",
+          "language": "pl",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "pt",
+      "name": "Portugal",
+      "feeds": [
+        {
+          "title": "RTP Notícias",
+          "url": "https://www.rtp.pt/noticias/rss",
+          "language": "pt",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "ro",
+      "name": "România",
+      "feeds": [
+        {
+          "title": "HotNews",
+          "url": "https://www.hotnews.ro/rss",
+          "language": "ro",
+          "kind": "newspaper"
+        }
+      ]
+    },
+    {
+      "code": "ru",
+      "name": "Россия",
+      "feeds": []
+    },
+    {
+      "code": "sm",
+      "name": "San Marino",
+      "feeds": []
+    },
+    {
+      "code": "rs",
+      "name": "Србија",
+      "feeds": []
+    },
+    {
+      "code": "sk",
+      "name": "Slovensko",
+      "feeds": [
+        {
+          "title": "SME · Domov",
+          "url": "https://rss.sme.sk/rss/sme-sekcia-domov",
+          "language": "sk",
+          "kind": "newspaper"
+        }
+      ]
+    },
+    {
+      "code": "si",
+      "name": "Slovenija",
+      "feeds": [
+        {
+          "title": "RTV SLO · Novice",
+          "url": "https://www.rtvslo.si/feeds/novice.xml",
+          "language": "sl",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "es",
+      "name": "España",
+      "feeds": [
+        {
+          "title": "El País · Internacional",
+          "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/internacional/portada",
+          "language": "es",
+          "kind": "newspaper"
+        }
+      ]
+    },
+    {
+      "code": "se",
+      "name": "Sverige",
+      "feeds": [
+        {
+          "title": "SVT Nyheter",
+          "url": "https://www.svt.se/nyheter/rss.xml",
+          "language": "sv",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "ch",
+      "name": "Schweiz / Suisse / Svizzera",
+      "feeds": [
+        {
+          "title": "SRF News",
+          "url": "https://www.srf.ch/news/rss",
+          "language": "de",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "tr",
+      "name": "Türkiye",
+      "feeds": [
+        {
+          "title": "TRT World",
+          "url": "https://www.trtworld.com/rss/",
+          "language": "en",
+          "kind": "international"
+        }
+      ]
+    },
+    {
+      "code": "ua",
+      "name": "Україна",
+      "feeds": [
+        {
+          "title": "Ukrinform",
+          "url": "https://www.ukrinform.net/block/rss",
+          "language": "en",
+          "kind": "agency"
+        }
+      ]
+    },
+    {
+      "code": "gb",
+      "name": "United Kingdom",
+      "feeds": [
+        {
+          "title": "BBC News · World",
+          "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+          "language": "en",
+          "kind": "broadcaster"
+        },
+        {
+          "title": "BBC News · UK",
+          "url": "https://feeds.bbci.co.uk/news/uk/rss.xml",
+          "language": "en",
+          "kind": "broadcaster"
+        }
+      ]
+    },
+    {
+      "code": "va",
+      "name": "Città del Vaticano",
+      "feeds": []
+    }
+  ]
+}
