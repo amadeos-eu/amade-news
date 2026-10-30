@@ -1,6 +1,6 @@
 # amade-news
 
-**amade-news** (shown as *News*) is the feed reader of the [amadeOS](https://github.com/datazuul/amadeos) desktop. It fetches the newest articles of websites, blogs and podcasts that offer an RSS or Atom feed and shows them in one list, with pictures and without advertising. *Europe's News* offers the public broadcasters, news agencies and newspapers of European countries to subscribe to by country. Built like the other amadeOS applications.
+**amade-news** (shown as *News*) is the feed reader of the [amadeOS](https://github.com/amadeos-eu/amadeos) desktop. It fetches the newest articles of websites, blogs and podcasts that offer an RSS or Atom feed and shows them in one list, with pictures and without advertising. *Europe's News* offers the public broadcasters, news agencies and newspapers of European countries to subscribe to by country. Built like the other amadeOS applications.
 
 ![License](https://img.shields.io/badge/license-EUPL--1.2-blue)
 ![Java](https://img.shields.io/badge/Java-25-orange)
@@ -21,7 +21,7 @@
 - **Network**: the connections follow the proxy of *Settings → Network*, with its password, through `Network.httpClient()` of amade-commons.
 - Reads RSS 0.9x/2.0, RSS 1.0 (RDF) and Atom 1.0, with Media RSS, `content:encoded`, Dublin Core and iTunes fields, and repairs common faults (bare `&`, HTML entities, wrong characters, a charset that does not match).
 - Five languages (English, Deutsch, Français, Español, Italiano), following the amadeOS desktop language; *Options → Language* overrides it. Articles are shown in the language they were written in.
-- Theme colours and Motif look from [amade-commons](https://github.com/datazuul/amade-commons).
+- Theme colours and Motif look from [amade-commons](https://github.com/amadeos-eu/amade-commons).
 
 ![Europe's News](docs/screenshots/amade-news-europe.png)
 
