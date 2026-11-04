@@ -5,6 +5,7 @@ import eu.amadeos.apps.news.images.ImageCache;
 import eu.amadeos.apps.news.ui.common.Flags;
 import eu.amadeos.commons.i18n.Messages;
 import eu.amadeos.commons.swing.AmadeUI;
+import eu.amadeos.commons.theme.DesktopTheme;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -19,6 +20,7 @@ import javax.swing.Scrollable;
 import javax.swing.SwingConstants;
 import javax.swing.event.HyperlinkEvent;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -134,11 +136,30 @@ final class ReadingPane extends JPanel implements Scrollable {
         placeholder.setBackground(AmadeUI.theme().fieldBackground());
     }
 
+    /**
+     * The welcome text as a page in the theme's field colours. Swing's HTML ignores the component's colours and draws
+     * black text and dark blue links, which cannot be read on a dark palette.
+     */
+    String placeholderPage(String placeholderHtml) {
+        Color background = AmadeUI.theme().fieldBackground();
+        return "<html><head><style>body { color: " + hex(AmadeUI.theme().fieldText()) + "; } a { color: "
+                + hex(linkColour(background)) + "; }</style></head><body style='font-family:sans-serif; font-size:"
+                + Math.round(AmadeUI.scaled(textSize)) + "pt'>" + placeholderHtml + "</body></html>";
+    }
+
+    /** A link blue that stands out on the given background: light on dark palettes, dark on light ones. */
+    static Color linkColour(Color background) {
+        return DesktopTheme.isDark(background) ? new Color(0x8A, 0xB4, 0xF8) : new Color(0x1A, 0x4F, 0xB0);
+    }
+
+    private static String hex(Color c) {
+        return String.format("#%02x%02x%02x", c.getRed(), c.getGreen(), c.getBlue());
+    }
+
     void show(Optional<ArticleRow> row, String placeholderHtml) {
         shown = row;
         if (row.isEmpty()) {
-            placeholder.setText("<html><body style='font-family:sans-serif; font-size:" + Math.round(AmadeUI.scaled(textSize))
-                    + "pt'>" + placeholderHtml + "</body></html>");
+            placeholder.setText(placeholderPage(placeholderHtml));
             cards.show(this, "placeholder");
             return;
         }

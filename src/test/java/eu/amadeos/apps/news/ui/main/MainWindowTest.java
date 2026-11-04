@@ -57,12 +57,24 @@ class MainWindowTest {
     }
 
     @Test
+    void linksStandOutOnDarkAndLightPalettes() {
+        java.awt.Color onDark = ReadingPane.linkColour(new java.awt.Color(0x1C, 0x1D, 0x26));
+        java.awt.Color onLight = ReadingPane.linkColour(java.awt.Color.WHITE);
+        assertFalse(DesktopTheme.isDark(onDark), "light links on a dark field");
+        assertTrue(DesktopTheme.isDark(onLight), "dark links on a light field");
+    }
+
+    @Test
     void theFirstStartWelcomesWithLinksToTheCatalogAndAddFeed() throws Exception {
         open(new Scene(dir), EN);
         onEdt(() -> {
             assertEquals("News", window.getTitle());
             assertTrue(window.reading().showsPlaceholder());
             assertTrue(window.reading().placeholderText().contains("Choose from Europe's News"));
+            java.awt.Color text = DesktopTheme.WARM_MOTIF.fieldText();
+            assertTrue(window.reading().placeholderText().contains(
+                    String.format("#%02x%02x%02x", text.getRed(), text.getGreen(), text.getBlue())),
+                    "the welcome text is drawn in the theme's field text colour");
             assertEquals(4, window.sourceList().getModel().getSize());
             assertFalse(window.menu().item("menu.article.open").isEnabled());
         });
