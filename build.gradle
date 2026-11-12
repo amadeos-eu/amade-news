@@ -87,8 +87,12 @@ tasks.register('deb') {
         }
 
         def launcher = new File(binDir, 'amade-news')
+        // The options all amadeOS programs share (heap, garbage collector) come first from the argument file
+        // amadeos-session installs; the options after it win over them.
         launcher.text = """#!/bin/sh
-exec /usr/bin/java -jar /opt/amade-news/amade-news.jar "\$@"
+OPTIONS=/etc/amadeos/java/app.options
+[ -r "\$OPTIONS" ] || OPTIONS=/dev/null
+exec /usr/bin/java "@\$OPTIONS" -jar /opt/amade-news/amade-news.jar "\$@"
 """
         launcher.setExecutable(true, false)
 
@@ -117,7 +121,7 @@ Version: ${debVersion}
 Section: net
 Priority: optional
 Architecture: all
-Depends: openjdk-25-jre | java-runtime (>= 25)
+Depends: openjdk-25-jre | java-runtime (>= 25), amadeos-java-options
 Maintainer: amadeOS Project <developers@datazuul.com>
 Description: News and feed reader for amadeOS
  Follows news sites, blogs and podcasts through their RSS and Atom feeds:
