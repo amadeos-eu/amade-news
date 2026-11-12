@@ -121,7 +121,7 @@ Version: ${debVersion}
 Section: net
 Priority: optional
 Architecture: all
-Depends: openjdk-25-jre | java-runtime (>= 25)
+Depends: openjdk-25-jre | java-runtime (>= 25), amadeos-java-options
 Maintainer: amadeOS Project <developers@datazuul.com>
 Description: News and feed reader for amadeOS
  Follows news sites, blogs and podcasts through their RSS and Atom feeds:
